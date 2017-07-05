@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <RootNamespace>autofac.example.data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="repositories\" />
+    <Folder Include="generic\" />
+    <Folder Include="data\" />
+    <Folder Include="extensions\" />
+    <Folder Include="dependency\" />
+    <Folder Include="entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="EmptyClass.cs" />
+    <Compile Remove="generic\ICsvRepository`1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Autofac" Version="4.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="foo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="foo.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
